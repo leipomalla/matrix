@@ -3,28 +3,35 @@ $string_start = array("1","0","1","<>","0","1","0","<>","1","0","-1");
 
 
 //callback function for array_filter, removes <>
+
 function numeric($var){
   
     return (is_numeric($var));
 
   
 }
+
  //new array without <> 
 $filtered = array_filter ($string_start, "numeric");
 
 //print_r($filtered); die;
-//Let's count how many <> there was.+1 is because we are chunking next
+
+//Let's count how many <> there was. +1 is because we are chunking next and the count tells how many chunks
+//there is going to be
 $diff_count = count($string_start) - count($filtered) + 1;
 
 $chunked = array_chunk($filtered, $diff_count);
 
 //Every sub-array is same size, so we can compare the size of array
 // (rows) to first sub-arrays size (columns)
+
 if(sizeof($chunked) != sizeof($chunked[0])){
   echo "not possible";
-} 
+}
+
 // Returns true if mat[N][N] is  
 // symmetric, else false 
+
 function isSymmetric($mat, $rows) 
 { 
     $tr = array(array()); 
@@ -59,6 +66,3 @@ function isSymmetric($mat, $rows)
   //print_r($chunked); die;
 
 
-//We'll remove quotes first
-//$string_start = str_replace('"', "", $string_start);
-//$string_start = str_replace("'", "", $string_start);

@@ -46,8 +46,7 @@ if(sizeof($chunked) != sizeof($chunked[0])){
     echo 'symmetric';  
 
 } 
-    
-//array("1","2","1","<>","2","1","2","<>", "1","2","1")
+                
 
    
 // keep this function call here  
